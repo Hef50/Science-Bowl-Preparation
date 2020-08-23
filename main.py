@@ -110,7 +110,7 @@ def option_screennormal():
   main_window.destroy()
   option_screen.deiconify()
   middleschoolregular = tkinter.Button(option_screen,text='Normal',command=middle_school_window,width=20)
-  middleschoolcomp = tkinter.Button(option_screen,text='quiz',width=20,command=quiz_game)
+  middleschoolcomp = tkinter.Button(option_screen,text='quiz(beta)',width=20,command=quiz_game)
 
   middleschoolregular.grid(row=0,column=0)
   middleschoolcomp.grid(row=0,column=1)
