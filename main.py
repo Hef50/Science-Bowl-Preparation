@@ -78,6 +78,48 @@ def quiz_game():
   option_screen.destroy()
   quiz_game_window = tkinter.Tk()
   questionssssss = 0
+  def enterrr():
+    totalll = 0
+    answer_one = entriess[1].get()
+    answer_two = entriess[2].get()
+    answer_three = entriess[3].get()
+    answer_four = entriess[4].get()
+    answer_five = entriess[5].get()
+    answer_six = entriess[6].get()
+    answer_seven = entriess[7].get()
+    answer_eight = entriess[8].get()
+    answer_nine = entriess[9].get()
+    answer_ten = entriess[10].get()
+    
+    if answer_one == values_list[0]:
+      totalll += 1
+    if answer_two == values_list[1]:
+      totalll = totalll + 1
+    if answer_three == values_list[2]:
+      totalll = totalll + 1
+    if answer_four == values_list[3]:
+      totalll = totalll + 1
+    if answer_five == values_list[4]:
+      totalll = totalll + 1
+    if answer_six == values_list[5]:
+      totalll = totalll + 1
+    if answer_seven == values_list[6]:
+      totalll = totalll + 1
+    if answer_eight == values_list[7]:
+      totalll = totalll + 1
+    if answer_nine == values_list[8]:
+      totalll = totalll + 1
+    if answer_ten == values_list[9]:
+      totalll = totalll + 1
+    print(totalll)
+    
+    
+    
+    
+    
+  labelss = {}
+  entriess = {}
+  answerssss = {}
   for question in range(1,11):
     
     random_subject = random.randint(1,6)
@@ -92,15 +134,24 @@ def quiz_game():
       subjecttt = questions.PhysicalSQ1
     if random_subject == 5:
       subjecttt = questions.GeneralSQ1
-    questionss, answerss = random.choice(list(subjecttt.items()))
+    questionss, answerssss["group" + str(question)] = random.choice(list(subjecttt.items()))
     question_text = str(question) + '. ' + questionss
-    entry_Label = tkinter.Entry(quiz_game_window)
-    question_Label = tkinter.Label(quiz_game_window,text=question_text)
+    entriess[question] = tkinter.Entry(quiz_game_window)
+    labelss[question] = tkinter.Label(quiz_game_window,text=question_text)
     
-    question_Label.grid(row=questionssssss,column=0)
-    entry_Label.grid(row=(questionssssss)+1,column=0)
+    labelss[question].grid(row=questionssssss,column=0)
+    entriess[question].grid(row=(questionssssss)+1,column=0)
     questionssssss += 2
+    
+  answerssss_values = answerssss.values()
+  values_list = list(answerssss_values)
+  print(values_list)
+  enter_button = tkinter.Button(quiz_game_window,text='Submit',command=enterrr)
 
+  enter_button.grid(row=20,column=0)
+  
+  
+    
 
 
 
@@ -110,7 +161,7 @@ def option_screennormal():
   main_window.destroy()
   option_screen.deiconify()
   middleschoolregular = tkinter.Button(option_screen,text='Normal',command=middle_school_window,width=20)
-  middleschoolcomp = tkinter.Button(option_screen,text='quiz(beta)',width=20,command=quiz_game)
+  middleschoolcomp = tkinter.Button(option_screen,text='quiz',width=20,command=quiz_game)
 
   middleschoolregular.grid(row=0,column=0)
   middleschoolcomp.grid(row=0,column=1)
