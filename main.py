@@ -40,15 +40,15 @@ destroy_button.grid(row=5,column=0)
 
 entry_window.mainloop()
 
-
-
+option_screen = tkinter.Tk()
+option_screen.withdraw()
 
 
 
 
 
 main_window = tkinter.Tk()
-""""
+
 def high_school_window():
     main_window.destroy()
     high_schoolwindow = tkinter.Tk()
@@ -73,16 +73,53 @@ def high_school_window():
     answer_entry.grid(row=2,column=0,columnspan=3,padx=0)
 
     high_schoolwindow.mainloop()
-""" 
+  
+def quiz_game():
+  option_screen.destroy()
+  quiz_game_window = tkinter.Tk()
+  questionssssss = 0
+  for question in range(1,11):
+    
+    random_subject = random.randint(1,6)
+    global subjecttt
+    if random_subject == 1:
+      subjecttt = questions.LifeSQ1
+    if random_subject == 2:
+      subjecttt = questions.EarthSQ1
+    if random_subject == 3:
+      subjecttt = questions.MathQ1
+    if random_subject == 4:
+      subjecttt = questions.PhysicalSQ1
+    if random_subject == 5:
+      subjecttt = questions.GeneralSQ1
+    questionss, answerss = random.choice(list(subjecttt.items()))
+    question_text = str(question) + '. ' + questionss
+    entry_Label = tkinter.Entry(quiz_game_window)
+    question_Label = tkinter.Label(quiz_game_window,text=question_text)
+    
+    question_Label.grid(row=questionssssss,column=0)
+    entry_Label.grid(row=(questionssssss)+1,column=0)
+    questionssssss += 2
+
+
+
+
 
   
-      
+def option_screennormal():
+  main_window.destroy()
+  option_screen.deiconify()
+  middleschoolregular = tkinter.Button(option_screen,text='Normal',command=middle_school_window,width=20)
+  middleschoolcomp = tkinter.Button(option_screen,text='quiz',width=20,command=quiz_game)
 
+  middleschoolregular.grid(row=0,column=0)
+  middleschoolcomp.grid(row=0,column=1)
+  
     
 
 def middle_school_window():
   total = 0
-  main_window.destroy()
+  option_screen.destroy()
   middle_schoolwindow = tkinter.Tk()
   middle_schoolwindow.title('Science Bowl Middle School Practice Questions')
   middle_schoolwindow.configure(bg='deep sky blue')
@@ -133,10 +170,7 @@ def middle_school_window():
   answer_entry = tkinter.Entry(middle_schoolwindow,text='Answer',width=150,bd=5)
   question_entry = tkinter.Entry(middle_schoolwindow,width=150,bd=5)
   enter_button = tkinter.Button(middle_schoolwindow,width=15,padx=0,text='Enter',bg="light green",command=enter)
-  left_text = tkinter.Text(middle_schoolwindow)
-  left_text.insert(tkinter.INSERT,'Science Bowl')
-  right_text = tkinter.Text(middle_schoolwindow)
-  right_text.insert(tkinter.INSERT,'Middle School')
+
   question_entry.delete(0,tkinter.END)
   question_entry.insert(0,questionss)
   question_entry.config({"background":"antique white"})
@@ -152,26 +186,12 @@ def middle_school_window():
   answer_entry.grid(row=4,columnspan=5,padx=0)
   question_entry.grid(row=2,columnspan=5,padx=0)
   enter_button.grid(row=5,column=2)
-  left_text.grid(row=5,column=0)
-  left_text.grid(row=5,column=4)
+
 
   middle_schoolwindow.mainloop()
   
 
-   
-
-    
- 
-
-  
-
-
-  
-
-   
-  
-
-middle_school = tkinter.Button(main_window,text='Middle School Questions',command=middle_school_window)
+middle_school = tkinter.Button(main_window,text='Middle School Questions',command=option_screennormal)
 #high_school = tkinter.Button(main_window,text='High School Questions',command=high_school_window)
 
 
