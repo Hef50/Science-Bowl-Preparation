@@ -91,25 +91,25 @@ def quiz_game():
     answer_nine = entriess[9].get()
     answer_ten = entriess[10].get()
     
-    if answer_one == values_list[0]:
+    if answer_one.lower() == values_list[0].lower():
       totalll += 1
-    if answer_two == values_list[1]:
+    if answer_two.lower() == values_list[1].lower():
       totalll = totalll + 1
-    if answer_three == values_list[2]:
+    if answer_three.lower() == values_list[2].lower():
       totalll = totalll + 1
-    if answer_four == values_list[3]:
+    if answer_four.lower() == values_list[3].lower():
       totalll = totalll + 1
-    if answer_five == values_list[4]:
+    if answer_five.lower() == values_list[4].lower():
       totalll = totalll + 1
-    if answer_six == values_list[5]:
+    if answer_six.lower() == values_list[5].lower():
       totalll = totalll + 1
-    if answer_seven == values_list[6]:
+    if answer_seven.lower() == values_list[6].lower():
       totalll = totalll + 1
-    if answer_eight == values_list[7]:
+    if answer_eight.lower() == values_list[7].lower():
       totalll = totalll + 1
-    if answer_nine == values_list[8]:
+    if answer_nine.lower() == values_list[8].lower():
       totalll = totalll + 1
-    if answer_ten == values_list[9]:
+    if answer_ten.lower() == values_list[9].lower():
       totalll = totalll + 1
     final_label = tkinter.Label(quiz_game_window,text='You got these many right: '+str(totalll))
     final_label.grid(row=22,column=0)
@@ -146,7 +146,7 @@ def quiz_game():
     
   answerssss_values = answerssss.values()
   values_list = list(answerssss_values)
-  print(values_list)
+ 
   enter_button = tkinter.Button(quiz_game_window,text='Submit',command=enterrr)
 
   enter_button.grid(row=20,column=0)
