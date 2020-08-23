@@ -111,7 +111,8 @@ def quiz_game():
       totalll = totalll + 1
     if answer_ten == values_list[9]:
       totalll = totalll + 1
-    print(totalll)
+    final_label = tkinter.Label(quiz_game_window,text='You got these many right: '+str(totalll))
+    final_label.grid(row=22,column=0)
     
     
     
